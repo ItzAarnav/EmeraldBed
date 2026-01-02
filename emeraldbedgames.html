@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>EmeraldBed</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="manifest" href="manifest.json">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#111;
+  --panel:#1e1e1e;
+  --card:#2b2b2b;
+  --text:#fff;
+  --accent:#00ff99;
+}
+.light{
+  --bg:#f4f4f4;
+  --panel:#ffffff;
+  --card:#e0e0e0;
+  --text:#111;
+  --accent:#00aa66;
+}
+
+*{box-sizing:border-box}
+
+html,body{
+  height:100%;
+  margin:0;
+  font-family:'Roboto',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  overflow:hidden;
+}
+
+header{
+  height:60px;
+  background:var(--panel);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 15px;
+}
+
+header button{
+  background:var(--card);
+  color:var(--text);
+  border:none;
+  padding:8px 12px;
+  border-radius:8px;
+  cursor:pointer;
+  transition:0.2s;
+}
+header button:hover{transform:scale(1.1)}
+
+#app{
+  position:relative;
+  height:calc(100vh - 60px);
+}
+
+/* ---------- SCREEN SYSTEM (FIXED) ---------- */
+.screen{
+  position:absolute;
+  inset:0;
+  display:none;
+  pointer-events:none;
+  background:var(--bg); /* ✅ FIX */
+}
+
+.screen.active{
+  display:flex;
+  pointer-events:auto;
+  z-index:5;
+}
+
+/* ---------- HOMESCREEN ---------- */
+#homescreen{
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding-top:60px;
+}
+
+#logo{
+  width:220px;
+  margin-bottom:20px;
+}
+
+#homescreen h2{
+  font-family:'Orbitron',sans-serif;
+  color:var(--accent);
+}
+
+.main-btn{
+  margin-top:15px;
+  padding:15px 30px;
+  font-size:1.2em;
+  border-radius:10px;
+  border:none;
+  cursor:pointer;
+  background:var(--accent);
+  color:#111;
+  font-family:'Orbitron',sans-serif;
+  transition:0.25s;
+}
+.main-btn:hover{
+  transform:scale(1.1);
+  box-shadow:0 0 15px var(--accent);
+}
+
+/* ---------- MENU ---------- */
+#menu{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(180px,1fr));
+  gap:15px;
+  padding:20px;
+  overflow-y:auto;
+  align-content:start;
+  background:linear-gradient(var(--bg),var(--panel));
+}
+
+#menu button{
+  background:var(--card);
+  color:var(--text);
+  border:none;
+  border-radius:10px;
+  padding:20px;
+  font-family:'Orbitron',sans-serif;
+  font-size:1.1em;
+  cursor:pointer;
+  min-height:80px;
+  transition:0.25s;
+}
+#menu button:hover{
+  transform:scale(1.07);
+  background:#444;
+}
+
+/* ---------- GAME PAGE ---------- */
+#gamePage{
+  flex-direction:column;
+  background:#000; /* ✅ SOLID */
+  min-height:0;
+}
+
+#gameTop{
+  height:50px;
+  background:linear-gradient(#000,#111);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 12px;
+}
+
+#gameTop button{
+  background:#000000cc;
+  color:white;
+  border:none;
+  padding:8px 12px;
+  border-radius:8px;
+  cursor:pointer;
+  transition:0.2s;
+}
+#gameTop button:hover{transform:scale(1.1)}
+
+#gameFrame{
+  flex:1;
+  width:100%;
+  border:none;
+  background:black;
+}
+
+#gameInfo{
+  background:var(--panel);
+  padding:12px;
+  border-top:2px solid var(--accent);
+}
+#gameInfo h2{
+  margin:0 0 5px;
+  font-family:'Orbitron',sans-serif;
+  color:var(--accent);
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <span>EmeraldBed</span>
+  <button onclick="toggleTheme()">🌗</button>
+</header>
+
+<div id="app">
+
+<div id="homescreen" class="screen active">
+  <img src="https://iili.io/fckrcj2.png" id="logo">
+  <h2>Welcome to EmeraldBed</h2>
+  <p>Play games instantly.</p>
+  <button class="main-btn" onclick="showMenu()">Go to Menu</button>
+  <button id="resumeBtn" class="main-btn" style="display:none" onclick="resumeLastGame()">▶ Resume Last Game</button>
+</div>
+
+<div id="menu" class="screen">
+  <button onclick="openGame('copter')">Copter.io</button>
+  <button onclick="openGame('survival')">Survival Race Arena</button>
+  <button onclick="openGame('diep')">Diep.io</button>
+  <button onclick="openGame('florr')">Florr.io</button>
+  <button onclick="openGame('slither')">Slither.io</button>
+  <button onclick="openGame('zombs')">Zombs Royale</button>
+  <button onclick="openGame('krunker')">Krunker.io</button>
+  <button onclick="openGame('kour')">Kour.io</button>
+  <button onclick="openGame('eaglercraft')">Eaglercraft</button>
+  <button onclick="openGame('geometry')">Geometry Dash Lite</button>
+  <button onclick="openGame('moomoo')">MooMoo.io</button>
+  <button onclick="openGame('ragdoll')">Ragdoll Archers</button>
+  <button onclick="openGame('drivemad')">Drive Mad</button>
+  <button onclick="openGame('monkeymart')">Monkey Mart</button>
+  <button onclick="openGame('retrobowl')">Retro Bowl</button>
+  <button onclick="openGame('blockblast')">Block Blast</button>
+  <button onclick="openGame('roblox')">Roblox</button>
+  <button onclick="openGame('soundboard')">Meme Soundboard</button>
+  <button onclick="openGame('google')">Google</button>
+  <button onclick="openGame('yohoho')">YoHoHo.io</button>
+  <button onclick="openGame('escape')">Escape Road 2</button>
+  <button onclick="openGame('lolbeans')">LOLBeans.io</button>
+  <button onclick="openGame('hole')">Hole.io</button>
+  <button onclick="openGame('hexanaut')">Hexanaut.io</button>
+  <button onclick="openGame('poki')">Poki</button>
+</div>
+
+<div id="gamePage" class="screen">
+  <div id="gameTop">
+    <button onclick="backToMenu()">⬅ Back</button>
+    <button onclick="openFullscreen()">⛶ Fullscreen</button>
+  </div>
+  <iframe id="gameFrame" allowfullscreen></iframe>
+  <div id="gameInfo">
+    <h2 id="gameTitle"></h2>
+    <p id="gameDescription"></p>
+  </div>
+</div>
+
+</div>
+
+<script>
+const games={
+  copter:{title:"Copter.io",url:"https://copter.io",description:"Helicopter combat"},
+  survival:{title:"Survival Race Arena",url:"https://survival-race.io",description:"Racing survival"},
+  diep:{title:"Diep.io",url:"https://diep.io",description:"Tank arena"},
+  florr:{title:"Florr.io",url:"https://florr.io",description:"Grow your flower"},
+  slither:{title:"Slither.io",url:"https://slither.io",description:"Snake battle"},
+  zombs:{title:"Zombs Royale",url:"https://zombsroyale.io",description:"2D battle royale"},
+  krunker:{title:"Krunker.io",url:"https://krunker.io",description:"FPS shooter"},
+  kour:{title:"Kour.io",url:"https://kour.io",description:"Arena shooter"},
+  eaglercraft:{title:"Eaglercraft",url:"https://eaglercraft.com",description:"Minecraft browser"},
+  geometry:{title:"Geometry Dash Lite",url:"https://geometrydash-lite.io",description:"Platformer"},
+  moomoo:{title:"MooMoo.io",url:"https://moomoo.io",description:"Build & survive"},
+  ragdoll:{title:"Ragdoll Archers",url:"https://ragdollarchers2.io",description:"Physics archery"},
+  drivemad:{title:"Drive Mad",url:"https://drivemad.com",description:"Driving chaos"},
+  monkeymart:{title:"Monkey Mart",url:"https://monkeymartonline.org",description:"Run a mart"},
+  retrobowl:{title:"Retro Bowl",url:"https://retrobowl.org",description:"Football classic"},
+  blockblast:{title:"Block Blast",url:"https://block-blast.io",description:"Puzzle blocks"},
+  roblox:{title:"Roblox",url:"https://now.gg/apps/roblox-corporation/5349/roblox.html",description:"Roblox browser"},
+  soundboard:{title:"Meme Soundboard",url:"https://soundboardguys.com",description:"Memes"},
+  google:{title:"Google",url:"https://google.com/?igu=1",description:"Google iframe"},
+  yohoho:{title:"YoHoHo.io",url:"https://yohoho.io",description:"Pirate royale"},
+  escape:{title:"Escape Road 2",url:"https://escaperoad2.io",description:"Police chases"},
+  lolbeans:{title:"LOLBeans.io",url:"https://lolbeans.io",description:"Obstacle race"},
+  hole:{title:"Hole.io",url:"https://holeonline.io",description:"Consume city"},
+  hexanaut:{title:"Hexanaut.io",url:"https://hexanaut.io",description:"Territory control"},
+  poki:{title:"Poki",url:"https://poki.com/?igu=1",description:"Game portal"}
+};
+
+const screens=document.querySelectorAll('.screen');
+function showScreen(id){
+  screens.forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+function showMenu(){showScreen('menu');}
+
+function openGame(key){
+  const g=games[key];
+  localStorage.setItem('lastGame',key);
+  showScreen('gamePage');
+  gameFrame.src=g.url;
+  gameTitle.textContent=g.title;
+  gameDescription.textContent=g.description;
+}
+
+function resumeLastGame(){
+  const key=localStorage.getItem('lastGame');
+  if(key && games[key]) openGame(key);
+}
+
+function backToMenu(){
+  gameFrame.src='';
+  showScreen('menu');
+}
+
+function toggleTheme(){
+  document.body.classList.toggle('light');
+  localStorage.setItem('theme',document.body.classList.contains('light')?'light':'dark');
+}
+
+function openFullscreen(){
+  if(gameFrame.requestFullscreen) gameFrame.requestFullscreen();
+}
+
+window.onload=()=>{
+  if(localStorage.getItem('theme')==='light') document.body.classList.add('light');
+  if(localStorage.getItem('lastGame')) resumeBtn.style.display='inline-block';
+};
+</script>
+
+</body>
+</html>
