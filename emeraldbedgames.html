@@ -198,8 +198,8 @@ header button:hover{transform:scale(1.1)}
 <div id="homescreen" class="screen active">
   <img src="https://iili.io/fckrcj2.png" id="logo">
   <h2>Welcome to EmeraldBed</h2>
-  <p>Play games instantly.</p>
-  <button class="main-btn" onclick="showMenu()">Go to Menu</button>
+  <p>Play unblocked games instantly, with crystal clear precision</p>
+  <button class="main-btn" onclick="showMenu()">Begin Experience</button>
   <button id="resumeBtn" class="main-btn" style="display:none" onclick="resumeLastGame()">▶ Resume Last Game</button>
 </div>
 
@@ -247,31 +247,31 @@ header button:hover{transform:scale(1.1)}
 
 <script>
 const games={
-  copter:{title:"Copter.io",url:"https://copter.io",description:"Helicopter combat"},
-  survival:{title:"Survival Race Arena",url:"https://survival-race.io",description:"Racing survival"},
-  diep:{title:"Diep.io",url:"https://diep.io",description:"Tank arena"},
-  florr:{title:"Florr.io",url:"https://florr.io",description:"Grow your flower"},
-  slither:{title:"Slither.io",url:"https://slither.io",description:"Snake battle"},
-  zombs:{title:"Zombs Royale",url:"https://zombsroyale.io",description:"2D battle royale"},
-  krunker:{title:"Krunker.io",url:"https://krunker.io",description:"FPS shooter"},
-  kour:{title:"Kour.io",url:"https://kour.io",description:"Arena shooter"},
-  eaglercraft:{title:"Eaglercraft",url:"https://eaglercraft.com",description:"Minecraft browser"},
-  geometry:{title:"Geometry Dash Lite",url:"https://geometrydash-lite.io",description:"Platformer"},
-  moomoo:{title:"MooMoo.io",url:"https://moomoo.io",description:"Build & survive"},
-  ragdoll:{title:"Ragdoll Archers",url:"https://ragdollarchers2.io",description:"Physics archery"},
-  drivemad:{title:"Drive Mad",url:"https://drivemad.com",description:"Driving chaos"},
-  monkeymart:{title:"Monkey Mart",url:"https://monkeymartonline.org",description:"Run a mart"},
-  retrobowl:{title:"Retro Bowl",url:"https://retrobowl.org",description:"Football classic"},
-  blockblast:{title:"Block Blast",url:"https://block-blast.io",description:"Puzzle blocks"},
-  roblox:{title:"Roblox",url:"https://now.gg/apps/roblox-corporation/5349/roblox.html",description:"Roblox browser"},
-  soundboard:{title:"Meme Soundboard",url:"https://soundboardguys.com",description:"Memes"},
-  google:{title:"Google",url:"https://google.com/?igu=1",description:"Google iframe"},
-  yohoho:{title:"YoHoHo.io",url:"https://yohoho.io",description:"Pirate royale"},
-  escape:{title:"Escape Road 2",url:"https://escaperoad2.io",description:"Police chases"},
-  lolbeans:{title:"LOLBeans.io",url:"https://lolbeans.io",description:"Obstacle race"},
-  hole:{title:"Hole.io",url:"https://holeonline.io",description:"Consume city"},
-  hexanaut:{title:"Hexanaut.io",url:"https://hexanaut.io",description:"Territory control"},
-  poki:{title:"Poki",url:"https://poki.com/?igu=1",description:"Game portal"}
+  copter:{title:"Copter.io",url:"https://copter.io",description:"Fight other players using a helicopter. Upgrade your copter, and dominate the battlefield!"},
+  survival:{title:"Survival Race Arena",url:"https://survival-race.io",description:"A combo of spleef, with cars that can fly. Fun, but hard to explain lol"},
+  diep:{title:"Diep.io",url:"https://diep.io",description:"Upgrade your tank to reach new heights, and totally obliterate your opponents."},
+  florr:{title:"Florr.io",url:"https://florr.io",description:"Evolve your flower, collect new petals to win in combat."},
+  slither:{title:"Slither.io",url:"https://slither.io",description:"Grow your snake, and feed on others... really explains the food chain."},
+  zombs:{title:"Zombs Royale",url:"https://zombsroyale.io",description:"Basically 2D Fortnite. That's it."},
+  krunker:{title:"Krunker.io",url:"https://krunker.io",description:"A fun FPS shooter."},
+  kour:{title:"Kour.io",url:"https://kour.io",description:"Like Krunker.io but a fast-paced version."},
+  eaglercraft:{title:"Eaglercraft",url:"https://eaglercraft.com",description:"Play Minecraft on your browser for free, but only supports older versions."},
+  geometry:{title:"Geometry Dash Lite",url:"https://geometrydash-lite.io",description:"A fast-paced and quick reaction based platformer that never stops."},
+  moomoo:{title:"MooMoo.io",url:"https://moomoo.io",description:"Build structures, gather resources, and survive the longest."},
+  ragdoll:{title:"Ragdoll Archers",url:"https://ragdollarchers2.io",description:"Physics archery... with stickmans."},
+  drivemad:{title:"Drive Mad",url:"https://drivemad.com",description:"Play over 100 fun, quick, and challenging levels that require precision driving of your truck, plane, or whatever."},
+  monkeymart:{title:"Monkey Mart",url:"https://monkeymartonline.org",description:"Monkeys... run... marts?!"},
+  retrobowl:{title:"Retro Bowl",url:"https://retrobowl.org",description:"The peak of American Football video games, in retro pixel style."},
+  blockblast:{title:"Block Blast",url:"https://block-blast.io",description:"The fun, and addicting game found as a mobile app, but online."},
+  roblox:{title:"Roblox",url:"https://now.gg/apps/roblox-corporation/5349/roblox.html",description:"Play Roblox. (NOTE: This app is currently down, or will only work for a short duration)"},
+  soundboard:{title:"Meme Soundboard",url:"https://soundboardguys.com",description:"Meme sounds, and TikTok sounds so you can troll your teachers in class. Be stealthy though, you don't want to get caught playing the Fart Sound effect..."},
+  google:{title:"Google",url:"https://google.com/?igu=1",description:"Google browser, but this isn't fully functional."},
+  yohoho:{title:"YoHoHo.io",url:"https://yohoho.io",description:"Pirate battle royale, with fun and challenging mechanics. Collect over 20+ skins."},
+  escape:{title:"Escape Road 2",url:"https://escaperoad2.io",description:"Online ripoff of the fun mobile game Smashy Road. Outrun the police, and collect a variety of vehicles, with fun mechanics."},
+  lolbeans:{title:"LOLBeans.io",url:"https://lolbeans.io",description:"Online version of Fall Guys."},
+  hole:{title:"Hole.io",url:"https://holeonline.io",description:"Consume the city, and become a bigger black hole."},
+  hexanaut:{title:"Hexanaut.io",url:"https://hexanaut.io",description:"Control territory, much like paper io, but with new mechanics."},
+  poki:{title:"Poki",url:"https://poki.com/?igu=1",description:"Find a lot of fun games here. (Experimental)"}
 };
 
 const screens=document.querySelectorAll('.screen');
