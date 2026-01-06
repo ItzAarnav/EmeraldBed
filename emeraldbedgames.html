@@ -5,6 +5,9 @@
 <title>EmeraldBed</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- EmeraldBed and it's organizations are all copyrighted, with all rights reserved. Any attempts of taking our content, and you will be punished. Google Doc: https://docs.google.com/document/d/1HRKkSASGHWwxqEWwugbWCfpAmu5PgH1MX9b3IgAz60Y/edit?tab=t.cojkaibbv9qc-->
+<!-- This application was developed by EmeraldBed, and the Emerald Organization -->
+
 <link rel="manifest" href="manifest.json">
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
@@ -229,6 +232,13 @@ header button:hover{transform:scale(1.1)}
   <button onclick="openGame('hole')">Hole.io</button>
   <button onclick="openGame('hexanaut')">Hexanaut.io</button>
   <button onclick="openGame('poki')">Poki</button>
+  <button onclick="openGame('paper')">Paper.io</button>
+  <button onclick="openGame('smashkarts')">Smash Karts</button>
+  <button onclick="openGame('slope')">Slope</button>
+  <button onclick="openGame('digdig')">digdig.io</button>
+  <button onclick="openGame('basketrandom')">Basket Random</button>
+  <button onclick="openGame('leveldevil')">Level Devil</button>
+  <button onclick="openGame('moto-x3m')">Moto X3M</button>
 </div>
 
 <div id="gamePage" class="screen">
@@ -266,12 +276,19 @@ const games={
   roblox:{title:"Roblox",url:"https://now.gg/apps/roblox-corporation/5349/roblox.html",description:"Play Roblox. (NOTE: This app is currently down, or will only work for a short duration)"},
   soundboard:{title:"Meme Soundboard",url:"https://soundboardguys.com",description:"Meme sounds, and TikTok sounds so you can troll your teachers in class. Be stealthy though, you don't want to get caught playing the Fart Sound effect..."},
   google:{title:"Google",url:"https://google.com/?igu=1",description:"Google browser, but this isn't fully functional."},
-  yohoho:{title:"YoHoHo.io",url:"https://yohoho.io",description:"Pirate battle royale, with fun and challenging mechanics. Collect over 20+ skins."},
+  yohoho:{title:"YoHoHo.io",url:"https://yohoho.io",description:"Pirate battle royale, with fun and challenging mechanics. Collect over 30+ skins."},
   escape:{title:"Escape Road 2",url:"https://escaperoad2.io",description:"Online ripoff of the fun mobile game Smashy Road. Outrun the police, and collect a variety of vehicles, with fun mechanics."},
   lolbeans:{title:"LOLBeans.io",url:"https://lolbeans.io",description:"Online version of Fall Guys."},
   hole:{title:"Hole.io",url:"https://holeonline.io",description:"Consume the city, and become a bigger black hole."},
   hexanaut:{title:"Hexanaut.io",url:"https://hexanaut.io",description:"Control territory, much like paper io, but with new mechanics."},
-  poki:{title:"Poki",url:"https://poki.com/?igu=1",description:"Find a lot of fun games here. (Experimental)"}
+  poki:{title:"Poki",url:"https://poki.com/?igu=1",description:"Find a lot of fun games here. (Experimental)"},
+  paper:{title:"Paper.io",url:"https://paperiogame.io",description:"Considered as a classic io game. Like Paper.io? Check out Hexanaut.io, a more fun, and more featured version of paper io."},
+  smashkarts:{title:"Smash Karts",url:"https://smashkarts.io",description:"Much like Mario Kart, minus the racing part, and more on the... fighting part. Pretty fun though, with cool weapons and stuff."},
+  slope:{title:"Slope",url:"https://slopeio.org",description:"A rather challenging game, Slope focuses on accuracy and timed-precision, and it's rather fun as well!"},
+  digdig:{title:"digdig.io",url:"https://digdig.io",description:"From the same creator of Florr.io, in DigDig.io you dig around a vast map, and try to conquer other diggers. It's worth a try at least once, but not the most reccomended for serious gamers."},
+  basketrandom:{title:"Basket Random",url:"https://basketrandom.io",description:"Play by yourself, or with a friend, and try to score as many baskets on your opponent as possible, but have no control over your movement lol. VERY FUN WITH FRIENDS!!!"},
+  leveldevil:{title:"Level Devil",url:"https://leveldevil-game.io",description:"This is def not a troll game... trust. Pretty fun though, with challenging and tricking levels."},
+  motoxm:{title:"Moto X3M",url:"https://moto-x3m.io",description:"Grab your motorbike, and drive through over 15 fun, and challenging levels! Explore fun physics, and try to speedrun each level."}
 };
 
 const screens=document.querySelectorAll('.screen');
