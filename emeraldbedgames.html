@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- EmeraldBed and it's organizations are all copyrighted, with all rights reserved. Any attempts of taking our content, and you will be punished. Google Doc: https://docs.google.com/document/d/1HRKkSASGHWwxqEWwugbWCfpAmu5PgH1MX9b3IgAz60Y/edit?tab=t.cojkaibbv9qc-->
-<!-- This application was developed by EmeraldBed, and the Emerald Organization -->
+<!-- This application was developed by EmeraldBed, and the Emerald Organization   -->
 
 <link rel="manifest" href="manifest.json">
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -236,9 +236,15 @@ header button:hover{transform:scale(1.1)}
   <button onclick="openGame('smashkarts')">Smash Karts</button>
   <button onclick="openGame('slope')">Slope</button>
   <button onclick="openGame('digdig')">digdig.io</button>
-  <button onclick="openGame('basketrandom')">Basket Random</button>
-  <button onclick="openGame('leveldevil')">Level Devil</button>
-  <button onclick="openGame('moto-x3m')">Moto X3M</button>
+  <button onclick="openGame('ovo')">OvO</button>
+  <button onclick="openGame('snowrider')">Snow Rider 3D</button>
+  <button onclick="openGame('deadshot')">Deadshot</button>
+  <button onclick="openGame('bloxd')">Bloxd.io</button>
+  <button onclick="openGame('shellshock')">Shell Shockers</button>
+  <button onclick="openGame('kiomet')">Kiomet</button>
+  <button onclick="openGame('arras')">Arras.io</button>
+  <button onclick="openGame('bonk')">Bonk.io</button>
+  <button onclick="openGame('subwaysurfers')">Subway Surfers</button>
 </div>
 
 <div id="gamePage" class="screen">
@@ -286,10 +292,18 @@ const games={
   smashkarts:{title:"Smash Karts",url:"https://smashkarts.io",description:"Much like Mario Kart, minus the racing part, and more on the... fighting part. Pretty fun though, with cool weapons and stuff."},
   slope:{title:"Slope",url:"https://slopeio.org",description:"A rather challenging game, Slope focuses on accuracy and timed-precision, and it's rather fun as well!"},
   digdig:{title:"digdig.io",url:"https://digdig.io",description:"From the same creator of Florr.io, in DigDig.io you dig around a vast map, and try to conquer other diggers. It's worth a try at least once, but not the most reccomended for serious gamers."},
-  basketrandom:{title:"Basket Random",url:"https://basketrandom.io",description:"Play by yourself, or with a friend, and try to score as many baskets on your opponent as possible, but have no control over your movement lol. VERY FUN WITH FRIENDS!!!"},
-  leveldevil:{title:"Level Devil",url:"https://leveldevil-game.io",description:"This is def not a troll game... trust. Pretty fun though, with challenging and tricking levels."},
-  motoxm:{title:"Moto X3M",url:"https://moto-x3m.io",description:"Grab your motorbike, and drive through over 15 fun, and challenging levels! Explore fun physics, and try to speedrun each level."}
+  ovo:{title:"OvO",url:"https://ovoclassic-pro.github.io/",description:"Slide, jump, and weave through over 20 fun, challenging, and realativley quick levels. OvO introduces new, fun mechanics in the world of parkour."},
+  snowrider:{title:"Snow Rider 3D",url:"https://snowrider3dd.github.io/",description:"Evade incoming obstacles, and collect new sleds. In this sledding game, try to dodge the objects, and get better sleds with cool designs!"},
+  deadshot:{title:"Deadshot",url:"https://deadshot.io/",description:"Much like Krunker.io, but with more challenging and realistic graphics and gameplay."},
+  bloxd:{title:"Bloxd.io",url:"https://bloxd.io/",description:"It's like Minecraft and Roblox put together. Play hundreds of community created servers/games, and much, much, more!"},
+  shellshock:{title:"Shell Shockers",url:"https://shellshock.io/",description:"A FPS shooting game, but with eggs. That's all that can be said..."},
+  kiomet:{title:"Kiomet.io",url:"https://kiomet.com/",description:"Kiomet is a strategic game focused on capturing other territories, and deploy troops. It's not too much on the action side, but once you get the hang of it, it'll be fun real fast!"},
+  arras:{title:"Arras.io",url:"https://arras.io/",description:"It's basically like Diep.io, but with more mechanics and easier features."},
+  bonk:{title:"Bonk.io",url:"https://bonk.io/",description:"Bonk.io is a competitive multiplayer platformer game involving fun physics and controls."},
+  subwaysurfers:{title:"Subway Surfers",url:"https://subway-surfers.gg/",description:"I'm sure EVERYONE knows this game... No explanation needed."}
 };
+
+
 
 const screens=document.querySelectorAll('.screen');
 function showScreen(id){
